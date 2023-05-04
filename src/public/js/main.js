@@ -1,1 +1,1 @@
-alert('javaScript do client funcionando!')
+//alert('javaScript do client funcionando!')

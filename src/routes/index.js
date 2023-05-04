@@ -6,4 +6,15 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/register', (req, res) => {
+    res.render('register', {
+        title: 'Cadastro de Clientes'
+    })
+})
+
+router.post('/register/new', (req, res) => {
+    // CONTROLLER
+    res.send('Ok, funcionou')
+})
+
 module.exports = router
