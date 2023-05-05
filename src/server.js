@@ -6,7 +6,7 @@ const express = require('express')
 const path = require('path')
 
 const db = require('./database')
-const routes = require('./routes')
+const {router} = require('./routes')
 
 // setting app
 const app = express()
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 
 // getting routes from router module
-app.use('/', routes)
+app.use('/', router)
 
 // 404 error
 app.use((req, res) => { // middleware
