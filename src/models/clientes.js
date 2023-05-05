@@ -10,7 +10,7 @@ const schema = new mongoose.Schema({
 
 const Model = mongoose.model('clientes', schema)
 
-module.exports = Model
+module.exports = {Model}
 
 // inserting a new instance in "Model"
 /* const register = new Model({

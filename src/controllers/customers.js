@@ -1,4 +1,4 @@
-const CustomersModel = require('../models/clientes')
+const {Model} = require('../models/clientes')
 
 function addNewCustomer (req, res) {
     // gettind data from form
@@ -10,7 +10,7 @@ function addNewCustomer (req, res) {
     } = req.body
 
     // inserting data in the required object
-    const register  = new CustomersModel({
+    const register  = new Model ({
         nome: name,
         idade: age,
         email: email,

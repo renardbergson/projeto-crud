@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
-const CustomerControllers = require('../controllers/customers')
+const {addNewCustomer} = require('../controllers/customers')
 
 router.get('/', (req, res) => {
     res.render('index', {
@@ -14,6 +14,6 @@ router.get('/register', (req, res) => {
     })
 })
 
-router.post('/register/new', CustomerControllers.addNewCustomer)
+router.post('/register/new', addNewCustomer)
 
 module.exports = router
