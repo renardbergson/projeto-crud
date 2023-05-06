@@ -1,6 +1,7 @@
 const {Model} = require('../models/clientes')
+const {crypto} = require('../utils/password')
 
-function addNewCustomer (req, res) {
+async function addNewCustomer (req, res) {
     // gettind data from form
     const {
         name, 
@@ -9,12 +10,15 @@ function addNewCustomer (req, res) {
         password
     } = req.body
 
+    // calling bcrypt function
+    const cryptoPassword = await crypto(password)
+
     // inserting data in the required object
     const register  = new Model ({
         nome: name,
         idade: age,
         email: email,
-        senha: password
+        senha: cryptoPassword
     }) 
 
     // saving data
