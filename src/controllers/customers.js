@@ -1,7 +1,13 @@
 const {Model} = require('../models/clientes')
 const {crypto} = require('../utils/password')
 
-async function addNewCustomer (req, res) {
+function index (req, res) {
+    res.render('register', {
+        title: 'Cadastro de Clientes'
+    })
+}
+
+async function add (req, res) {
     // gettind data from form
     const {
         name, 
@@ -27,4 +33,7 @@ async function addNewCustomer (req, res) {
     res.send('Cadastro realizado com sucesso!')
 }
 
-module.exports = {addNewCustomer}
+module.exports = {
+    index,
+    add
+}
