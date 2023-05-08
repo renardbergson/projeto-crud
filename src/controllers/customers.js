@@ -30,7 +30,10 @@ async function add (req, res) {
     // saving data
     register.save()
 
-    res.send('Cadastro realizado com sucesso!')
+    res.render('register', {
+        title: 'Cadastro de Clientes',
+        message: 'Cadastro realizado com sucesso!'
+    })
 }
 
 async function listUsers (req, res) {
