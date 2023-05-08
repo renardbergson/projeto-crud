@@ -33,10 +33,13 @@ async function add (req, res) {
     res.send('Cadastro realizado com sucesso!')
 }
 
-function listUsers (req, res) {
+async function listUsers (req, res) {
+    // mongoose user listing method
+    const users = await Model.find()
+
     res.render('listUsers', {
         title: 'Lista de Clientes',
-        users: []
+        users: users
     })
 }
 
