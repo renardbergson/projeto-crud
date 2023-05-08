@@ -33,7 +33,15 @@ async function add (req, res) {
     res.send('Cadastro realizado com sucesso!')
 }
 
+function listUsers (req, res) {
+    res.render('listUsers', {
+        title: 'Lista de Clientes',
+        users: []
+    })
+}
+
 module.exports = {
     index,
-    add
+    add,
+    listUsers
 }
