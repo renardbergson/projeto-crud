@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <h1> <%= title %> </h1>
+
+    <%- include('partials/navbar.ejs') %>
+
+    <% if (typeof message !== 'undefined') { %>
+        <%= message %>
+
+        <br><br>
+        <a href="/register">
+            <button style="cursor: pointer;">Retornar</button>
+        </a>
+
+    <% } else { %>
+        <form action="edit" method="get">
+            <div>
+                <label>Nome</label>
+                <input name="name" type="text" placeholder="insira seu nome">
+            </div>
+            <br>
+            <div>
+                <label>Idade</label>
+                <input name="age" type="text" placeholder="insira sua idade">
+            </div>
+            <br>
+            <div>
+                <label>E-mail:</label>
+                <input name="email" type="email" placeholder="insira seu e-mail">
+            </div>
+            <br>
+            <br>
+            <button type="submit" style="cursor: pointer;">Editar</button>
+        </form>
+    <% } %>
+</body>
+</html>

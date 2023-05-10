@@ -46,12 +46,15 @@ async function list (req, res) {
     })
 }
 
-/* function edit (req, res) {
-
-} */
+function formEdit (req, res) {
+    res.render('edit', {
+        title: 'Editar Cliente'
+    })
+} 
 
 module.exports = {
     index,
     add,
-    list
+    list,
+    formEdit
 }
