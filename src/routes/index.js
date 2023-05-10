@@ -8,9 +8,13 @@ router.get('/', IndexController.index)
 
 // register
 router.get('/register', CustomersController.index)
-router.post('/register/add', CustomersController.add)
+router.post('/register', CustomersController.add)
 
 // list users
-router.get('/listUsers', CustomersController.listUsers)
+router.get('/list', CustomersController.list)
+
+// edit users
+//router.get('/edit', CustomersController.edit)
+//router.post('/edit', CustomersController.edit)
 
 module.exports = {router}

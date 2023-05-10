@@ -36,18 +36,22 @@ async function add (req, res) {
     })
 }
 
-async function listUsers (req, res) {
+async function list (req, res) {
     // mongoose user listing method
     const users = await Model.find()
 
-    res.render('listUsers', {
+    res.render('list', {
         title: 'Lista de Clientes',
         users: users
     })
 }
 
+/* function edit (req, res) {
+
+} */
+
 module.exports = {
     index,
     add,
-    listUsers
+    list
 }
