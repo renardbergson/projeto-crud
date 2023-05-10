@@ -86,10 +86,24 @@ async function edit (req, res) {
     })
 }
 
+async function remove (req, res) {
+    // receiving user ID from param
+    const { id } = req.params
+    
+    // choosing user to remove (this is an async function)
+    const remove = await Model.deleteOne({_id: id})
+
+    if (remove) {
+        console.log(remove)
+        res.redirect('/list')
+    }
+}
+
 module.exports = {
     index,
     add,
     list,
     formEdit,
-    edit
+    edit,
+    remove
 }

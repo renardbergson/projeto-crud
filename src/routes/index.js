@@ -15,6 +15,9 @@ router.get('/list', CustomersController.list)
 
 // edit users
 router.get('/edit', CustomersController.formEdit)
-router.post('/edit/:id', CustomersController.edit) // getting the param sent by POST method ("/:") 
+router.post('/edit/:id', CustomersController.edit) // getting the param sent by POST method ("/:")
+
+// remove users
+router.get('/remove/:id', CustomersController.remove)
 
 module.exports = {router}

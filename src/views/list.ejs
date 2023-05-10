@@ -12,8 +12,11 @@
         <% users.forEach((user) => { %>
             <li>
                 <%= user.nome %> - <%= user.email %> - <%= user.idade %> anos - 
-                <a href="/edit?id=<%= user._id %>">[editar]</a>
                 <!-- using EJS to send user ID to the rout for GET method -->
+                <!-- send by query string -->
+                <a href="/edit?id=<%= user._id %>">[editar]</a>
+                <!-- send by params -->
+                <a href="/remove/<%= user._id %>">[excluir]</a>
             </li>    
         <% }) %>
     </ul>
