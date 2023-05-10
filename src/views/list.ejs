@@ -12,7 +12,8 @@
         <% users.forEach((user) => { %>
             <li>
                 <%= user.nome %> - <%= user.email %> - <%= user.idade %> anos - 
-                <a href="/edit">[editar]</a>
+                <a href="/edit?id=<%= user._id %>">[editar]</a>
+                <!-- using EJS to send user ID to the rout for GET method -->
             </li>    
         <% }) %>
     </ul>

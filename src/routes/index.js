@@ -15,6 +15,6 @@ router.get('/list', CustomersController.list)
 
 // edit users
 router.get('/edit', CustomersController.formEdit)
-//router.post('/edit', CustomersController.edit)
+router.post('/edit/:id', CustomersController.edit) // getting the param sent by POST method ("/:") 
 
 module.exports = {router}

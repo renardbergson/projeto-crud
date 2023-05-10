@@ -46,15 +46,50 @@ async function list (req, res) {
     })
 }
 
-function formEdit (req, res) {
+async function formEdit (req, res) {
+    // getting the id sent by GET method 
+    const { id } = req.query
+
+    // looking for user by ID (this is an async function)
+    const user = await Model.findById(id)
+
     res.render('edit', {
-        title: 'Editar Cliente'
+        title: 'Editar Cliente',
+        // sending user data to the view
+        user: user
     })
 } 
+
+async function edit (req, res) {
+    const {
+        name, 
+        age, 
+        email
+    } = req.body
+
+    // gettind the param sent by POST method
+    const { id } = req.params
+
+    // looking for user by ID (this is an async function)
+    const user = await Model.findById(id)
+
+    // overwriting data with new data
+    user.nome = name
+    user.idade = age
+    user.email = email
+
+    user.save()
+    
+    res.render('edit', {
+        title: 'Editar Cliente',
+        message: 'Usuário alterado com sucesso!'
+    })
+}
 
 module.exports = {
     index,
     add,
     list,
-    formEdit
+    formEdit,
+    edit
 }
