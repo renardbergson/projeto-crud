@@ -94,7 +94,6 @@ async function remove (req, res) {
     const remove = await Model.deleteOne({_id: id})
 
     if (remove) {
-        console.log(remove)
         res.redirect('/list')
     }
 }
