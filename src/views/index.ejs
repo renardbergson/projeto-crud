@@ -4,8 +4,16 @@
     <%- include('partials/head') %>
 </head>
 <body>
-    <h1> <%= title %> </h1>
+    <div class="container">
+        <header class="header">        
+            <h1> <%= title %> </h1>
+            <p> <%= subtitle %> </p>
+            <%- include('partials/navbar.ejs') %>
+        </header>
 
-    <%- include('partials/navbar.ejs') %>
+        <main id="mainContent">
+            <p>Este projeto foi desenvolvido com um design simples, apenas praticar e entender o funcionamento das quatro operações básicas de um banco de dados: adicionar, listar, editar e excluir. Para este fim, foi usada uma lista fictícia de clientes, a qual recebe os campos de: nome, idade, e-mail e senha.</p>
+        </main>
+    </div>
 </body>
 </html>

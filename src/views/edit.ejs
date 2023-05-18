@@ -4,40 +4,45 @@
     <%- include('partials/head') %>
 </head>
 <body>
-    <h1> <%= title %> </h1>
+    <div class="container">
+        <header class="header">    
+            <h1> <%= title %> </h1>
+            <%- include('partials/navbar.ejs') %>    
+        </header>
 
-    <%- include('partials/navbar.ejs') %>
-
-    <% if (typeof message !== 'undefined') { %>
-        <%= message %>
-
-        <br><br>
-        <a href="/register">
-            <button style="cursor: pointer;">Retornar</button>
-        </a>
-
-    <% } else { %>
-        <!-- sending user ID in the URL ('?' doesn't work with POST method!) -->
-        <form action="edit/<%= user._id %>" method="post">
-            <div>
-                <label>Nome</label>
-                <!-- printing received user data from rout in the fields (value="...") -->
-                <input name="name" type="text" placeholder="insira seu nome" value="<%= user.nome %>">
-            </div>
-            <br>
-            <div>
-                <label>Idade</label>
-                <input name="age" type="text" placeholder="insira sua idade" value="<%= user.idade %>">
-            </div>
-            <br>
-            <div>
-                <label>E-mail:</label>
-                <input name="email" type="email" placeholder="insira seu e-mail" value="<%= user.email %>">
-            </div>
-            <br>
-            <br>
-            <button type="submit" style="cursor: pointer;">Editar</button>
-        </form>
-    <% } %>
+        <main id="mainContent">
+            <% if (typeof message !== 'undefined') { %>
+                <%= message %>
+        
+                <br><br>
+                <a href="/register">
+                    <button style="cursor: pointer;">Retornar</button>
+                </a>
+        
+            <% } else { %>
+                <!-- sending user ID in the URL ('?' doesn't work with POST method!) -->
+                <form action="edit/<%= user._id %>" method="post">
+                    <div>
+                        <label>Nome</label>
+                        <!-- printing received user data from rout in the fields (value="...") -->
+                        <input name="name" type="text" placeholder="insira seu nome" value="<%= user.nome %>">
+                    </div>
+                    <br>
+                    <div>
+                        <label>Idade</label>
+                        <input name="age" type="text" placeholder="insira sua idade" value="<%= user.idade %>">
+                    </div>
+                    <br>
+                    <div>
+                        <label>E-mail:</label>
+                        <input name="email" type="email" placeholder="insira seu e-mail" value="<%= user.email %>">
+                    </div>
+                    <br>
+                    <br>
+                    <button type="submit" style="cursor: pointer;">Editar</button>
+                </form>
+            <% } %>
+        </main>
+    </div>
 </body>
 </html>

@@ -4,21 +4,26 @@
     <%- include('partials/head') %>
 </head>
 <body>
-    <h1> <%= title %> </h1>
+    <div class="container">
+        <header class="header">
+            <h1> <%= title %> </h1>
+            <%- include('partials/navbar.ejs') %>
+        </header>
 
-    <%- include('partials/navbar.ejs') %>
-
-    <ul>
-        <% users.forEach((user) => { %>
-            <li>
-                <%= user.nome %> - <%= user.email %> - <%= user.idade %> anos - 
-                <!-- using EJS to send user ID to the rout for GET method -->
-                <!-- send by query string -->
-                <a href="/edit?id=<%= user._id %>">[editar]</a>
-                <!-- send by params -->
-                <a href="/remove/<%= user._id %>">[excluir]</a>
-            </li>    
-        <% }) %>
-    </ul>
+        <main id="mainContent">
+            <ul>
+                <% users.forEach((user) => { %>
+                    <li>
+                        <%= user.nome %> - <%= user.email %> - <%= user.idade %> anos - 
+                        <!-- using EJS to send user ID to the rout for GET method -->
+                        <!-- send by query string -->
+                        <a href="/edit?id=<%= user._id %>">[editar]</a>
+                        <!-- send by params -->
+                        <a href="/remove/<%= user._id %>">[excluir]</a>
+                    </li>    
+                <% }) %>
+            </ul>
+        </main>
+    </div>
 </body>
 </html>

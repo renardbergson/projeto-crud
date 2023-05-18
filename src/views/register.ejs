@@ -4,42 +4,47 @@
     <%- include('partials/head') %>
 </head>
 <body>
-    <h1> <%= title %> </h1>
+    <div class="container">
+        <header class="header">
+            <h1> <%= title %> </h1>
+            <%- include('partials/navbar.ejs') %>
+        </header>
 
-    <%- include('partials/navbar.ejs') %>
-
-    <% if (typeof message !== 'undefined') { %>
-        <%= message %>
-
-        <br><br>
-        <a href="/register">
-            <button style="cursor: pointer;">Retornar</button>
-        </a>
-
-    <% } else { %>
-        <form action="register" method="post">
-            <div>
-                <label>Nome</label>
-                <input name="name" type="text" placeholder="insira seu nome">
-            </div>
-            <br>
-            <div>
-                <label>Idade</label>
-                <input name="age" type="text" placeholder="insira sua idade">
-            </div>
-            <br>
-            <div>
-                <label>E-mail:</label>
-                <input name="email" type="email" placeholder="insira seu e-mail">
-            </div>
-            <br>
-            <div>
-                <label>Senha</label>
-                <input name="password" type="password" placeholder="insira sua senha">
-            </div>
-            <br>
-            <button type="submit" style="cursor: pointer;">Cadastrar</button>
-        </form>
-    <% } %>
+        <main id="mainContent">
+            <% if (typeof message !== 'undefined') { %>
+                <%= message %>
+        
+                <br><br>
+                <a href="/register">
+                    <button style="cursor: pointer;">Retornar</button>
+                </a>
+        
+            <% } else { %>
+                <form action="register" method="post">
+                    <div>
+                        <label>Nome</label>
+                        <input name="name" type="text" placeholder="primeiro nome">
+                    </div>
+                    <br>
+                    <div>
+                        <label>Idade</label>
+                        <input name="age" type="text" placeholder="insira sua idade">
+                    </div>
+                    <br>
+                    <div>
+                        <label>E-mail:</label>
+                        <input name="email" type="email" placeholder="insira seu e-mail">
+                    </div>
+                    <br>
+                    <div>
+                        <label>Senha</label>
+                        <input name="password" type="password" placeholder="insira sua senha">
+                    </div>
+                    <br>
+                    <button type="submit" style="cursor: pointer;">Cadastrar</button>
+                </form>
+            <% } %>
+        </main>
+    </div>
 </body>
 </html>
